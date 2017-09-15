@@ -13,7 +13,7 @@ minor_ver = if node['salt']['version'].nil?
             elsif node['salt']['version'].split('-')[0].split('.').length == 2
               node['salt']['version'].split('-')[0].split('.')[0..1].join('.')
             elsif node['salt']['version'].split('-')[0].split('.').length == 3
-              "archive/#{node['salt']['version'].split('-')[0]}"
+              "archive/#{node['salt']['version'].split('-')[0].split('+')[0]}"
             end
 
 case node['platform_family']
